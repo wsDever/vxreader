@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信读书</title>
+</head>
+<style>
+        /* 浅色主题 */
+    body.vscode-light {
+        background: white;
+        color: black;
+    }
+    /* 深色主题 */
+    body.vscode-dark {
+        background: #252526;
+        color: white;
+    }
+    /* 高对比度主题 */
+    body.vscode-high-contrast {
+        background: white;
+        color: red;
+    }
+    
+    
+    html, body {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+    }
+    iframe{
+        width: 100%;
+        height: auto;
+    }
+ 
+</style>
+<body>
+    <iframe id="pageBody" name="reader" frameborder="0" src="https://weread.qq.com/web"></iframe>
+</body>
+<script>      
+    const _ifrEl = document.getElementById("pageBody");
+    _ifrEl.setAttribute('style', `height: 100vh`);
+</script>
+</html>
+        
