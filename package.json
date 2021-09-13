@@ -1,18 +1,22 @@
 {
   	"name": "vxreader",
-	"displayName": "vxReader",
+	"displayName": "vx-reader",
 	"description": "A vx reader tool in vscode",
-	"version": "0.0.1",
-	"publisher": "wushang",
-	"keywords":["vscode","web","plugin","read", "vx"],
+	"version": "0.0.2",
+	"author": {
+		"email": "wslover54@qq.com",
+		"name": "wsun"
+	},
+	"publisher": "wsun",
+	"keywords":["vscode", "vx", "Vx","read", "reader", "wx", "Wx", "weixin","plugin"],
 	"engines": {
 		"vscode": "^1.46.0"
 	},
-	"icon": "logo.png",
     "repository": {
         "type": "git",
-		"url": "https://github.com/wsDever/vxreader.git"
+		"url": "https://github.com/"
     },
+	"icon": "logo.png",
 	"categories": [
 		"Other"
 	],

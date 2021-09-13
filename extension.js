@@ -24,19 +24,29 @@ const util = require('./src/util');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	
+	let panel = null;
+
 	const _viewTask = vscode.commands.registerCommand('vxread.openVxRead', function (uri) {
-		// 创建webview
-		const panel = vscode.window.createWebviewPanel(
-			'openVxRead', // viewType
-			"VXReader", // 视图标题
-			vscode.ViewColumn.One, // 显示在编辑器的哪个部位
-			{
-				enableScripts: true, // 启用JS，默认禁用
-				retainContextWhenHidden: true, // webview被隐藏时保持状态，避免被重置
-			}
-		);
-		panel.webview.html = getWebViewContent(context, 'src/body.html');
+		const activePanel = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.viewColumn : undefined;
+		if(panel){
+			panel.reveal(activePanel);
+		}else{
+			panel = vscode.window.createWebviewPanel(
+				'openVxRead', // viewType
+				"VXReader", // 视图标题
+				vscode.ViewColumn.One, // 显示在编辑器的哪个部位
+				{
+					enableScripts: true, // 启用JS，默认禁用
+					retainContextWhenHidden: true, // webview被隐藏时保持状态，避免被重置
+				}
+			);
+			panel.webview.html = getWebViewContent(context, 'src/body.html');
+			panel.onDidDispose(() => {
+				panel = null;
+			},
+			null,
+			context.subscriptions);
+		}
 	});
 	context.subscriptions.push(_viewTask)
 }

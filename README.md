@@ -5,3 +5,6 @@
 ****
 **Now,**
 **Enjoy yourself !**
+
+****
+有问题及需求可发送邮件至[wslover54@qq.com](https://github.com/wsDever/vxreader)
